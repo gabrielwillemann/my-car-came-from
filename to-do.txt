@@ -1,0 +1,6 @@
+* Add i18next
+* Add progress bar in search
+* Add message error in search
+* Add suport to Mobile App
+* Add suport to PWA
+* Add automated tests
