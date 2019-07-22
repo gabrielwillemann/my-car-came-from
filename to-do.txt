@@ -1,6 +1,10 @@
-* Add i18next
-* Add progress bar in search
-* Add message error in search
+OK Add i18next
+OK Add message error in search
+OK Add icon
+
 * Add suport to Mobile App
+* Publish in PlayStore
+
+* Host in sharklabs
 * Add suport to PWA
 * Add automated tests

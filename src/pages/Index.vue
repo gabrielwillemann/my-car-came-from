@@ -6,7 +6,7 @@
           <q-card-section>
             <div>
               <h6 class="q-my-none text-center">
-                Digite a placa do veículo e descubra onde ele foi emplacado
+                {{ $t('pages:index:label') }}
               </h6>
             </div>
             <div class="q-mt-md" @keyup.enter="search">
@@ -21,26 +21,26 @@
               />
             </div>
             <div class="q-mt-lg text-center">
-              <q-btn color="primary" size="xl" label="Procurar" @click="search" />
+              <q-btn color="primary" size="xl" @click="search">
+                {{ $t('pages:index:search') }}
+              </q-btn>
             </div>
           </q-card-section>
         </q-card>
         <div class="q-mt-lg" v-if="founded">
           <q-card>
             <q-card-section>
-              <p class="text-center">O estado de emplacamento do veículo é:</p>
+              <p class="text-center">{{ $t('pages:index:labelResult') }}</p>
               <h4 class="q-my-none text-center">
                 {{ founded.stateName }}
               </h4>
             </q-card-section>
           </q-card>
         </div>
-        <div class="q-mt-lg" v-if="notFound">
+        <div class="q-mt-lg" v-if="messageError">
           <q-card class="bg-negative text-white">
             <q-card-section>
-              <h4 class="q-my-none text-center">
-                Placa não encontrada!
-              </h4>
+              <h4 class="q-my-none text-center">{{ messageError }}</h4>
             </q-card-section>
           </q-card>
         </div>
@@ -53,30 +53,34 @@
 import plateSearch from '../plates/plateSearch.js';
 
 export default {
-  name: 'PageIndex',
+  name: 'Index',
+  i18nOptions: { namespaces: ['components', 'app', 'components.index'] },
   data: () => ({
     plate: '',
     founded: null,
-    notFound: false,
+    messageError: null,
   }),
   watch: {
     plate(value) {
       if (!value) {
         this.founded = null;
-        this.notFound = false;
+        this.messageError = null;
       }
     },
   },
   methods: {
     search() {
       try {
+        this.messageError = null;
+        this.founded = null;
         this.plate = this.plate.toUpperCase();
-        if (!this.plate.match(/^[A-Z]{3}(\d)[0-9A-Z](\d){2}$/g)) {
-          throw 'Placa inválida!';
-        }
+
+        if (!this.plate.match(/^[A-Z]{3}(\d)[0-9A-Z](\d){2}$/g)) throw this.$t('pages:index:errorIncompletePlate');
         this.founded = plateSearch(this.plate);
-        this.notFound = !this.founded;
-      } catch (e) {}
+        if (!this.founded) throw this.$t('pages:index:notFound');
+      } catch (e) {
+        this.messageError = e;
+      }
     },
   },
 };

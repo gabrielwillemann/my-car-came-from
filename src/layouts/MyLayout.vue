@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <div class="col-grow text-center text-h5 q-my-lg">Onde foi emplacado?</div>
+        <div class="col-grow text-center text-h5 q-my-lg">{{ $t('app:title') }}</div>
       </q-toolbar>
     </q-header>
 

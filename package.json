@@ -10,7 +10,9 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@panter/vue-i18next": "^0.15.1",
     "@quasar/extras": "^1.0.0",
+    "i18next": "^17.0.6",
     "quasar": "^1.0.0"
   },
   "devDependencies": {
