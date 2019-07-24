@@ -16,7 +16,7 @@
           <a href="https://twitter.com/gabrielwilleman" target="_blank">
             <q-icon name="img:statics/twitter.svg" size="3rem" />
           </a>
-          <a href="https://github.com/gabrielwillemann/" target="_blank">
+          <a href="https://github.com/gabrielwillemann/my-car-came-from" target="_blank">
             <q-icon name="img:statics/github.png" size="2rem" />
           </a>
         </div>

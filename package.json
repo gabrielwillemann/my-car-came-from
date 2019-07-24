@@ -7,6 +7,8 @@
   "author": "Gabriel Willemann <twitter.com/gabrielwilleman>",
   "private": true,
   "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build -m android",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
@@ -16,7 +18,8 @@
     "quasar": "^1.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^1.0.0"
+    "@quasar/app": "^1.0.0",
+    "@quasar/quasar-app-extension-icon-genie": "^1.0.1"
   },
   "engines": {
     "node": ">= 8.9.0",
