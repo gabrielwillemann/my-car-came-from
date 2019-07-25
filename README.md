@@ -43,14 +43,12 @@ npm install
 quasar dev
 ```
 
+### Build Single Page Application
+```bash
+quasar build
+```
 
 ### Build Mobile App
 ```bash
 quasar build -m android
 ```
-
-### Build Mobile SPA
-```bash
-quasar build -m android
-```
-
