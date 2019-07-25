@@ -54,7 +54,6 @@ import plateSearch from '../plates/plateSearch.js';
 
 export default {
   name: 'Index',
-  i18nOptions: { namespaces: ['components', 'app', 'components.index'] },
   data: () => ({
     plate: '',
     founded: null,

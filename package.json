@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "productName": "Onde Foi Emplacado",
+  "license" : "MIT",
   "cordovaId": "br.com.sharklabs.mycarcamefrom",
   "author": "Gabriel Willemann <twitter.com/gabrielwilleman>",
   "private": true,

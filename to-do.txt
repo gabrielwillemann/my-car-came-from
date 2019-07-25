@@ -1,9 +1,8 @@
 OK Add i18next
 OK Add message error in search
 OK Add icon
-
-* Add suport to Mobile App
-* Publish in PlayStore
+OK Add suport to Mobile App
+OK Publish in PlayStore - pending...
 
 * Host in sharklabs
 * Add suport to PWA
