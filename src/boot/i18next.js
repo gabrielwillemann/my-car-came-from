@@ -2,8 +2,6 @@ import i18next from 'i18next';
 import VueI18Next from '@panter/vue-i18next';
 import resources from '../i18n/index.js';
 
-console.log(resources);
-
 export default async ({ app, Vue }) => {
   await i18next.init({
     lng: 'pt-BR',

@@ -9,16 +9,17 @@ Through license plate number it is possible to know the state the car came from.
 This app find the license plate number in list and show the car's home state.
 
 Recently the Brazil adopted a new pattern: AAA1A111. The rule to conversion of the license plate number is:
-* 0 = A
-* 1 = B
-* 2 = C
-* 3 = D
-* 4 = E
-* 5 = F
-* 6 = G
-* 7 = H
-* 8 = I
-* 9 = J
+
+- 0 = A
+- 1 = B
+- 2 = C
+- 3 = D
+- 4 = E
+- 5 = F
+- 6 = G
+- 7 = H
+- 8 = I
+- 9 = J
 
 For example: The car with plate AAA1111, your new plate is AAA1B111.
 
@@ -30,8 +31,12 @@ This new pattern don't change original list with plate number and states.
 
 [Mobile App](https://play.google.com/store/apps/details?id=br.com.sharklabs.mycarcamefrom)
 
+## Node Version
+
+Compatible with node version 10.15.
 
 ## Install the dependencies
+
 ```bash
 npm install -g @quasar/cli
 npm install -g cordova
@@ -39,16 +44,19 @@ npm install
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
+
 ```bash
 quasar dev
 ```
 
 ### Build Single Page Application
+
 ```bash
 quasar build
 ```
 
 ### Build Mobile App
+
 ```bash
 quasar build -m android
 ```

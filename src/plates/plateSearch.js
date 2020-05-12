@@ -1,11 +1,11 @@
-const vehicleRanges = require('./plateRanges.js');
+let plateRanges = require('./plateRanges.js');
 
-export default (plateWanted) => {
-  for (let range of vehicleRanges) {
+export default (plateWanted, listRanges) => {
+  listRanges = listRanges || plateRanges;
+  for (let range of listRanges) {
     if (plateWanted >= range.plateIni && plateWanted <= range.plateEnd) {
       return range;
     }
   }
   return null;
 };
-

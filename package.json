@@ -3,13 +3,16 @@
   "version": "0.0.1",
   "description": "",
   "productName": "Onde Foi Emplacado",
-  "license" : "MIT",
+  "license": "MIT",
   "cordovaId": "br.com.sharklabs.mycarcamefrom",
   "author": "Gabriel Willemann <twitter.com/gabrielwilleman>",
   "private": true,
   "scripts": {
+    "start": "quasar dev",
     "dev": "quasar dev",
     "build": "quasar build -m android",
+    "build:spa": "quasar build",
+    "publish:spa": "node publish.js",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
@@ -20,7 +23,8 @@
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
-    "@quasar/quasar-app-extension-icon-genie": "^1.0.1"
+    "@quasar/quasar-app-extension-icon-genie": "^1.0.1",
+    "gh-pages": "^2.2.0"
   },
   "engines": {
     "node": ">= 8.9.0",

@@ -58,6 +58,7 @@ export default {
     plate: '',
     founded: null,
     messageError: null,
+    listRanges: null,
   }),
   watch: {
     plate(value) {
@@ -70,17 +71,35 @@ export default {
   methods: {
     search() {
       try {
-        this.messageError = null;
-        this.founded = null;
-        this.plate = this.plate.toUpperCase();
-
-        if (!this.plate.match(/^[A-Z]{3}(\d)[0-9A-Z](\d){2}$/g)) throw this.$t('pages:index:errorIncompletePlate');
-        this.founded = plateSearch(this.plate);
+        this.validate();
+        this.founded = plateSearch(this.plate, this.listRanges);
         if (!this.founded) throw this.$t('pages:index:notFound');
       } catch (e) {
         this.messageError = e;
       }
     },
+    validate() {
+      this.messageError = null;
+      this.founded = null;
+      this.plate = this.plate.toUpperCase();
+      if (!this.plate.match(/^[A-Z]{3}(\d)[0-9A-Z](\d){2}$/g)) {
+        throw this.$t('pages:index:errorIncompletePlate');
+      }
+    },
+    async loadRanges() {
+      try {
+        let res = await fetch(
+          'https://gabrielwillemann.github.io/my-car-came-from/statics/plate-ranges.json'
+        );
+        let resText = await res.text();
+        this.listRanges = JSON.parse(resText);
+      } catch (error) {
+        this.listRanges = null;
+      }
+    },
+  },
+  mounted() {
+    this.loadRanges();
   },
 };
 </script>
